@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Varrius - Various Servlet Technologies</display-name>
+
+    <servlet>
+        <servlet-name>OldSchoolServlet</servlet-name>
+        <servlet-class>io.github.navpil.varrius.oldschool.OldSchoolServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OldSchoolServlet</servlet-name>
+        <url-pattern>/oldschool/webxml/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>Simple JSP Servlet</description>
+        <display-name>sample-jsp</display-name>
+        <servlet-name>sample-jsp</servlet-name>
+        <jsp-file>/WEB-INF/jsp/sample.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sample-jsp</servlet-name>
+        <url-pattern>/sample-jsp</url-pattern>
+    </servlet-mapping>
+
+    <!-- Spring -->
+    <servlet>
+        <servlet-name>spring-cars</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring-cars</servlet-name>
+        <!--Star is important-->
+        <url-pattern>/spring/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Everything servlet -->
+    <servlet>
+        <servlet-name>everything</servlet-name>
+        <servlet-class>io.github.navpil.varrius.everything.EverythingServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>everything</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

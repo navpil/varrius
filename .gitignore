@@ -1,0 +1,13 @@
+/.idea/
+*.iml
+target
+
+integration-dev-test
+/build-and-deploy.cmd
+/deploy.cmd
+
+sql/dist
+sql/mybatis/dist
+
+local-scripts
+make.cmd

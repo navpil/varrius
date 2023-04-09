@@ -23,6 +23,7 @@
 
         <jaxrs.api.impl.version>2.1.1</jaxrs.api.impl.version>
         <jersey.version>3.1.1</jersey.version>
+        <hk2.version>3.0.3</hk2.version>
 
         <slf4j.version>1.7.21</slf4j.version>
         <log4j2.version>2.17.1</log4j2.version>
@@ -51,15 +52,17 @@
             </dependency>
 
             <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
-                <version>${org.mapstruct.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.glassfish.jersey.media</groupId>
                 <artifactId>jersey-media-json-jackson</artifactId>
                 <version>${jersey.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.glassfish.hk2</groupId>
+                <artifactId>hk2-api</artifactId>
+                <version>${hk2.version}</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>

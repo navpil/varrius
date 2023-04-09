@@ -68,11 +68,25 @@ And that same class may be passed to the Jersey Config which will inject there a
 
 GET http://localhost:8080/varrius/mycustommapping/guitars/list
 
-TODO: HK2 autowiring
+### Autowiring HK2
 
-TODO: register plain servlet
+AutoScan requires:
+
+ - annotate all needed components with @Service and @Contract (package org.jvnet.hk2.annotations)
+ - register io.github.navpil.varrius.jersey.AutoScanFeature.class
+ - add the org.glassfish.hk2:hk2-metadata-generator dependency, so it will generate DI configuration (compile time)
+
+       varrius\target\classes\META-INF\hk2-locator\default
+
+GET http://localhost:8080/varrius/jerseyauto/guitars/list
+
+Code taken from [mkyong](https://mkyong.com/webservices/jax-rs/jersey-and-hk2-dependency-injection-auto-scanning/)
+
+### Jersey miscellaneous
 
 [Various ways to deploy Jersey](https://stackoverflow.com/questions/45625925/what-exactly-is-the-resourceconfig-class-in-jersey-2)
+
+_I could not find a way to register HttpServlets so that they can be managed by HK2 automatically, only manual config_ 
 
 ## Spring
 

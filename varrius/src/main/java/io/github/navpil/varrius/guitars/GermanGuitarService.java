@@ -5,16 +5,15 @@ import org.jvnet.hk2.annotations.Service;
 
 import java.util.List;
 
-@Service
-public class UkrainianGuitarService implements GuitarService {
+public class GermanGuitarService implements GuitarService {
 
     @Override
     public List<String> list() {
-        return List.of("Woodstock", "Universum", "Trembita");
+        return List.of("Musima");
     }
 
     @Override
     public int getPriority() {
-        return 100000;
+        return 5;
     }
 }

@@ -66,6 +66,24 @@ Check the `JerseyProgrammaticStartup`.
 With some meddling you may create a class which would be manually injected into some other servlet in this listener.
 And that same class may be passed to the Jersey Config which will inject there a necessary dependency. 
 
+For example:
+
+    // in JerseyProgrammaticStartup:
+    Eavesdrop eavesdrop = new Eavesdrop()
+    final ServletContainer s = new ServletContainer(new JerseyApplicationConfig(eavesdrop));
+    ...
+    context.addServlet("EavesdropServlet", new EavesdropServlet(eavesdrop));
+
+    // in JerseyApplicationConfig:
+    register(new ContainerLifecycleListener() {
+       public void onStartup(Container container) {
+          ServiceLocator serviceLocator = container.getApplicationHandler().getInjectionManager()
+               .getInstance(ServiceLocator.class);
+          eavesdrop.setGuitarService(serviceLocator.getService(GuitarService.class));
+       }
+       ...
+    }
+
 GET http://localhost:8080/varrius/mycustommapping/guitars/list
 
 ### Autowiring HK2

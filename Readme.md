@@ -31,6 +31,8 @@ GET http://localhost:8080/varrius/oldschool/uaguitars
 
 ### Annotation based config
 
+Check the `JerseyApplication`
+
 How does it work? Why @ApplicationPath is picked up?
 
 `jersey-container-servlet.jar` contains `JerseyServletContainerInitializer` which
@@ -88,6 +90,8 @@ GET http://localhost:8080/varrius/mycustommapping/guitars/list
 
 ### Autowiring HK2
 
+Check the `JerseyAutoscanApplication`
+
 AutoScan requires:
 
  - annotate all needed components with @Service and @Contract (package org.jvnet.hk2.annotations)
@@ -141,10 +145,10 @@ TODO: add Spring Boot and Quarkus examples.
 Classloading has the following order in Tomcat: 
 
  - Bootstrap classes of your JVM
- - System class loader classes (described above)
+ - System class loader classes
  - /WEB-INF/classes of your web application
  - /WEB-INF/lib/*.jar of your web application
- - Common class loader classes (described above)
+ - Common class loader classes
 
 I was tempted to put some library into the /lib folder into tomcat so that it's loaded with the same classloader
 and thus its static fields can be shared across application, but **don't do it**.

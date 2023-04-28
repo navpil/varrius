@@ -1,5 +1,8 @@
 # Various servlet technologies
 
+Examples were tested on Tomcat 10.
+It's possible that they won't work on earlier versions of Tomcat due to `javax.*` to `jakarta.*` package change
+
 ## Simple JSP
 
 Configured by `web.xml`, the `sample-jsp` servlet.

@@ -115,15 +115,20 @@ _I could not find a way to register HttpServlets so that they can be managed by 
 
 ## Spring
 
-Example shows the DispatcherServlet
+### Example with the DispatcherServlet
+
+Servlet registered in `web.xml`
 
 GET http://localhost:8080/varrius/spring/cars/all
 
 But it can also be configured by [annotations](https://efraimgentil.github.io/en/post/java/spring/configuring-spring-with-annotations)
 
-TODO: annotation configuration
+### Java based configuration
 
-TODO: register servlet
+GET http://localhost:8080/varrius/spring-annotated/cars/all
+
+A random servlet can be registered along with dispatcher servlet inside the `SpringAnnotated`.
+Read about example in [WebApplicationInitializer Spring Docs](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/WebApplicationInitializer.html)
 
 ## Everything servlet
 
